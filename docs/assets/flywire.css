@@ -1,0 +1,221 @@
+/* General Style */
+h4, h5 {
+    font-weight: 300;
+}
+
+img {
+    height: 60px;
+}
+
+/* Flipping Nonsense */
+.flip-card {
+    width: 100%;
+    height: 850px;
+    perspective: 5000px;
+    margin: 50px 0;
+  }
+.flip-card-inner {
+    position: relative;
+    width: 100%;
+    transform-style: preserve-3d;
+    transition: 0.75s;
+}
+.flipped .flip-card-inner {
+    transform: rotateY(180deg);
+}
+.rotated .flip-card-inner {
+    transform: rotateY(180deg) rotateX(90deg) translateZ(-400px);
+}
+.flip-card-top {
+    transform: rotateY(180deg) rotateX(90deg) translateZ(400px);
+}
+.flip-card-back {
+    transform: rotateY(180deg);
+}
+.flip-card-front,
+.flip-card-back,
+.flip-card-top {
+    position: absolute;
+    width: 100%;
+    height: 850px;
+    padding: 10px 20px;
+    backface-visibility: hidden;
+    background-color: white;
+}
+
+/* Sliding Stuff */
+.slide-down {
+    position: relative;
+    height: 2rem;
+    width: 100%;
+    overflow: hidden;
+    transition: 0.75s;
+}
+.slide-down>div {
+    position: absolute;
+    width:100%;
+    top: -5rem;
+    transition: 0.75s;
+    backface-visibility: hidden;;
+}
+.slide-down>div.show {
+    top: 0px;
+}
+
+/* Host Page*/
+.settings-button {
+    position: fixed;
+    right: 23px;
+    bottom: 23px;
+}
+
+/* Config Pages */
+.input-field .text-prefix {
+    position: absolute;
+    width: 1rem;
+    font-size: 1rem;
+    top: 0.8rem;
+    transition: color .2s;
+    -webkit-transition: color .2s;
+    backface-visibility: hidden;
+}
+
+.input-field .text-prefix ~ input,
+.input-field .text-prefix ~ textarea,
+.input-field .text-prefix ~ label,
+.input-field .text-prefix ~ .validate ~ label, 
+.input-field .text-prefix ~ .helper-text, 
+.input-field .text-prefix ~ .autocomplete-content {
+    margin-left: 1rem; 
+    width: 92%;
+    width: calc(100% - 1rem);
+}
+
+/* Flows Page */
+.flows {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+    font-weight: 300;
+}
+
+.controls {
+    float: left;
+    position: absolute;
+    width: 300px;
+    z-index: 999;
+    font-weight: normal;
+    backface-visibility: hidden;
+}
+.controls li {
+    height: 2rem;
+}
+.controls li>label {
+    display: inline-block;
+    width: 100px;
+}
+.controls li>div {
+    display: inline-block;
+}
+
+.payer,
+.merchant,
+.cards-wires {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+}
+.payer,
+.merchant {
+    flex-direction: column;
+    font-size: 2em;
+}
+.cards-wires {
+    justify-content: space-around;
+}
+
+.cards,
+.wires {
+    display: flex;
+    align-self: center;
+}
+.cards {
+    text-align: left;
+}
+.wires {
+    text-align: right;
+}
+.third-party {
+    height: 100px;
+    width: 200px;
+    align-self: center;
+    text-align: center;
+}
+
+.volume {
+    font-size: 1.5em;
+    padding: 10px 30px 20px 30px;
+    width: 250px;
+    margin: 5px;
+}
+.split {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.fees {
+    white-space: nowrap;
+}
+.total, .sub-total {
+    font-size: 1.5em;
+}
+.fees-total, .rates, .content {
+    font-size: 0.75em;
+}
+.saving {
+    font-size: 1rem;
+}
+
+.arrows {
+    display: flex;
+    justify-content: center;
+    flex-grow: 2;
+    margin: 10px 0;
+}
+
+.arrows .left-to-right,
+.arrows .right-to-left {
+    background-repeat:no-repeat;
+    background-position:center center;
+    background-size: 100% 100%, auto;
+    height: 100%;
+    width: 10%;
+    margin: 0 10px;
+}
+
+.arrows .left-to-right {
+    background: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' version='1.1' preserveAspectRatio='none' viewBox='0 0 100 100'><path d='M0,99 L100,1 L1,100' fill='black' /></svg>");
+}
+
+.arrows .right-to-left {
+    background: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' version='1.1' preserveAspectRatio='none' viewBox='0 0 100 100'><path d='M0,99 L100,1 L1,100' fill='black' /></svg>");
+    transform: scale(-1, 1);
+}
+
+.ftw {
+    color: #42A5F5;
+    /* font-weight: normal; */
+}
+
+/* Hacks */
+.slide-down.amount {
+    height: 4rem;
+}
+
+#toast-container {
+    bottom: 10%;
+    top: auto;
+}
